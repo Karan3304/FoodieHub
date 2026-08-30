@@ -1,0 +1,31 @@
+{
+  "name": "foodapp",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Karan3304/FoodieHub.git"
+  },
+  "keywords": [
+    "react",
+    "food-app"
+  ],
+  "author": "karan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Karan3304/FoodieHub/issues"
+  },
+  "homepage": "https://github.com/Karan3304/FoodieHub#readme",
+  "description": "",
+  "devDependencies": {
+    "parcel": "^2.16.4"
+  },
+  "dependencies": {
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  }
+}
