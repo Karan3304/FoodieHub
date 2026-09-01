@@ -15,7 +15,7 @@ const resList = [
       "Mughlai",
       "Desserts",
     ],
-    avgRating: 4.4,
+    avgRating: 3.4,
     parentId: "130",
     avgRatingString: "4.4",
     totalRatingsString: "8.2K+",
@@ -227,7 +227,7 @@ const resList = [
       "cid=83603308-0a4d-45bb-8a2e-c52d64234547~p=2~adgrpid=83603308-0a4d-45bb-8a2e-c52d64234547#ag45~mp=SWIGGY_IN~bl=FOOD~aet=RESTAURANT~aeid=508470~plpr=COLLECTION~eid=dbf925ea-85d1-4013-be2b-a82ce08bf721~srvts=1788113257221~collid=83639",
     sla: {
       deliveryTime: 30,
-      lastMileTravel: 4.6,
+      lastMileTravel: 3.6,
       serviceability: "SERVICEABLE",
       slaString: "30-40 mins",
       lastMileTravelString: "4.6 km",
@@ -524,7 +524,7 @@ const resList = [
       "Beverages",
       "Desserts",
     ],
-    avgRating: 4.1,
+    avgRating: 3.1,
     parentId: "478595",
     avgRatingString: "4.1",
     totalRatingsString: "128",
@@ -613,7 +613,7 @@ const resList = [
     cuisines: ["Pizzas", "Italian", "Fast Food", "Desserts", "Beverages"],
     avgRating: 4.2,
     parentId: "893",
-    avgRatingString: "4.2",
+    avgRatingString: "3.9",
     totalRatingsString: "15K+",
     promoted: true,
     adTrackingId:
@@ -648,7 +648,8 @@ const resList = [
             {
               attributes: {
                 theme: "",
-                imageId: "brand_cards/Badges%202026/12_Best%20in%20Pizza2026.png",
+                imageId:
+                  "brand_cards/Badges%202026/12_Best%20in%20Pizza2026.png",
                 description: "Top-rated for Pizza, based on user votes.",
               },
             },
@@ -727,7 +728,8 @@ const resList = [
             "Serves only 100% vegetarian food, with no non-veg items.",
         },
         {
-          imageId: "brand_cards/Badges%202026/54_Best%20in%20SouthIndian2026.png",
+          imageId:
+            "brand_cards/Badges%202026/54_Best%20in%20SouthIndian2026.png",
           description: "Top-rated for South Indian, based on user votes.",
         },
       ],
@@ -799,7 +801,8 @@ const resList = [
   {
     id: "674321",
     name: "Wow! Momo",
-    cloudinaryImageId: "RX_THUMBNAIL/IMAGES/VENDOR/2026/8/26/8e882efb-da54-4805-a591-c2ca49d6387b_973785.JPG",
+    cloudinaryImageId:
+      "RX_THUMBNAIL/IMAGES/VENDOR/2026/8/26/8e882efb-da54-4805-a591-c2ca49d6387b_973785.JPG",
     locality: "Bittan Market",
     areaName: "Arera Colony",
     costForTwo: "₹250 for two",
@@ -870,7 +873,8 @@ const resList = [
   {
     id: "308654",
     name: "The Sindhi Kadai",
-    cloudinaryImageId: "RX_THUMBNAIL/IMAGES/VENDOR/2025/1/17/e00351ad-b05d-41f4-8474-032510979376_94606.JPG",
+    cloudinaryImageId:
+      "RX_THUMBNAIL/IMAGES/VENDOR/2025/1/17/e00351ad-b05d-41f4-8474-032510979376_94606.JPG",
     locality: "Kolar Road",
     areaName: "Kolar Road",
     costForTwo: "₹300 for two",
@@ -922,7 +926,8 @@ const resList = [
             },
             {
               attributes: {
-                imageId: "brand_cards/Badges%202026/91_Best%20in%20Thali2026.png",
+                imageId:
+                  "brand_cards/Badges%202026/91_Best%20in%20Thali2026.png",
                 description: "Top-rated for Thali, based on user votes.",
                 theme: "",
               },
@@ -971,15 +976,14 @@ const resList = [
   {
     id: "745102",
     name: "Burger King",
-    cloudinaryImageId:
-      "17a2271a1deada78448b95b33544f8ec",
+    cloudinaryImageId: "17a2271a1deada78448b95b33544f8ec",
     locality: "DB City Mall",
     areaName: "Arera Hills",
     costForTwo: "₹400 for two",
     cuisines: ["Burgers", "Fast Food", "American", "Beverages"],
     avgRating: 4.0,
     parentId: "6621",
-    avgRatingString: "4.0",
+    avgRatingString: "4.1",
     totalRatingsString: "6.7K+",
     promoted: true,
     adTrackingId:
@@ -1048,7 +1052,7 @@ const resList = [
     priceComparisonComms: {},
   },
 ];
- 
+
 module.exports = resList;
 
 export default resList;
