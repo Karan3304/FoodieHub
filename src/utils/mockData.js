@@ -1056,3 +1056,7 @@ const resList = [
 module.exports = resList;
 
 export default resList;
+
+// swiggy api
+
+// https://www.swiggy.com/mapi/restaurants/list/v5?lat=22.7527421&lng=75.88371599999999&collection=83631&tags=layout_CCS_Pizza&sortBy=&filters=&type=rcv2&offset=0&carousel=true&third_party_vendor=1
