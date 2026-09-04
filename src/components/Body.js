@@ -1,70 +1,51 @@
 import RestaurantCard from "./RestaurantCard";
-// import resList from "../utils/mockData";
 import { useState, useEffect } from "react";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
-  // local state variable
-  const [listofRestaurants, setlistofReataurants] = useState([]);
+  const [listOfRestaurants, setListOfRestaurants] = useState([]);
 
   useEffect(() => {
     fetchData();
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch(
-      "https://proxy.corsfix.com/?https://www.swiggy.com/mapi/restaurants/list/v5?lat=22.7527421&lng=75.88371599999999&collection=80448&tags=&sortBy=&filters=&type=rcv2&offset=0&carousel=true&third_party_vendor=1",
+    const response = await fetch(
+      "https://foodfire.onrender.com/api/restaurants",
     );
 
-    const json = await data.json();
+    const json = await response.json();
+
     console.log(json);
-    // 1. Grab the raw cards array (guard against undefined with optional chaining)
-    const cards = json?.data?.cards ?? [];
-    console.log(cards);
 
-    // // 2. Keep only entries that are actually restaurant cards
-    const restaurantCards = cards.filter(
-      (c) =>
-        c?.card?.card?.["@type"] ===
-        "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
+    setListOfRestaurants(
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle // this is optional chaining
+        ?.restaurants || [],
     );
-    console.log(restaurantCards);
-
-    // // 3. Extract + flatten just the fields RestaurantCard needs
-    const restaurants = restaurantCards
-      .map((c) => c?.card?.card?.info)
-      .filter(Boolean) // drop any nulls/undefined that slipped through
-      .map((info) => ({
-        id: info.id,
-        name: info.name,
-        cloudinaryImageId: info.cloudinaryImageId,
-        cuisines: info.cuisines ?? [],
-        avgRating: info.avgRating,
-        costForTwo: info.costForTwo,
-        deliveryTime: info.sla?.deliveryTime,
-      }));
-    console.log(restaurants);
-
-    setlistofReataurants(restaurants);
   };
 
-  return (
+  return listOfRestaurants.length === 0 ? ( // if(listofRest.length===0){ then return shimmer}  this is known as  conditional rendering
+    <Shimmer />
+  ) : (
     <div className="body">
       <div className="filter">
         <button
           className="filter-btn"
           onClick={() => {
-            const filteredList = listofRestaurants.filter(
-              (res) => res.avgRating > 4,
+            const filteredList = listOfRestaurants.filter(
+              (restaurant) => restaurant.info.avgRating > 4.5,
             );
-            setlistofReataurants(filteredList);
+
+            setListOfRestaurants(filteredList);
           }}
         >
           Top rated Restaurants
         </button>
       </div>
+
       <div className="res-container">
-        {listofRestaurants.map((restaurant) => (
-          <RestaurantCard key={restaurant.id} resData={restaurant} />
+        {listOfRestaurants.map((restaurant) => (
+          <RestaurantCard key={restaurant.info.id} resData={restaurant} />
         ))}
       </div>
     </div>
@@ -72,3 +53,9 @@ const Body = () => {
 };
 
 export default Body;
+
+// Restaurant API:
+// https://foodfire.onrender.com/api/restaurants
+
+// Menu API:
+// https://foodfire.onrender.com/api/menu?page-type=REGULAR_MENU&complete-menu=true&lat=21.1702401&lng=72.83106070000001&submitAction=ENTER&restaurantId=${resId}
