@@ -13,7 +13,7 @@ const Body = () => {
 
   const fetchData = async () => {
     const response = await fetch(
-      "https://swiggy-api-4c740.web.app/swiggy-api.json",
+      "https://foodfire.onrender.com/api/restaurants",
     );
 
     const json = await response.json();
@@ -63,7 +63,7 @@ const Body = () => {
               (restaurant) => restaurant.info.avgRating > 4.2,
             );
 
-            setListOfRestaurants(filteredList);
+            setFilteredRestaurants(filteredList);
           }}
         >
           Top rated Restaurants
@@ -90,3 +90,4 @@ export default Body;
 // https://foodfire.onrender.com/api/menu?page-type=REGULAR_MENU&complete-menu=true&lat=21.1702401&lng=72.83106070000001&submitAction=ENTER&restaurantId=${resId}
 // OR
 // https://foodfire.onrender.com/api/menu?page-type=REGULAR_MENU&complete-menu=true&lat=21.1702401&lng=72.83106070000001&submitAction=ENTER&restaurantId=
+
