@@ -34,7 +34,7 @@ const RestaurantCard = (props) => {
 
       <h4>{costForTwo}</h4>
 
-      <h4>{areaName}</h4>
+      {/* <h4>{areaName}</h4> */}
     </div>
   );
 };

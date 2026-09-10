@@ -1,6 +1,7 @@
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
@@ -20,14 +21,14 @@ const Body = () => {
 
     console.log(json);
 
-    setListOfRestaurants(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle // this is optional chaining
-        ?.restaurants || [],
-    );
-    setFilteredRestaurants(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle // this is optional chaining
-        ?.restaurants || [],
-    );
+    // const filtRES = json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle // this is optional chaining
+    // ?.restaurants || [];
+    const filtRES =
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle // this is optional chaining
+        ?.restaurants || [];
+
+    setListOfRestaurants(filtRES);
+    setFilteredRestaurants(filtRES);
   };
 
   return listOfRestaurants.length === 0 ? ( // if(listofRest.length===0){ then return shimmer}  this is known as  conditional rendering
@@ -38,6 +39,8 @@ const Body = () => {
         <div className="search">
           <input
             type="text"
+            id="restaurant-search"
+            name="restaurant-search"
             className="search-box"
             value={searchText}
             onChange={(e) => {
@@ -72,7 +75,12 @@ const Body = () => {
 
       <div className="res-container">
         {filteredRestaurants.map((restaurant) => (
-          <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+          <Link
+            key={restaurant.info.id}
+            to={"/restaurants/" + restaurant.info.id}
+          >
+            <RestaurantCard resData={restaurant} />
+          </Link>
         ))}
       </div>
     </div>
@@ -90,4 +98,3 @@ export default Body;
 // https://foodfire.onrender.com/api/menu?page-type=REGULAR_MENU&complete-menu=true&lat=21.1702401&lng=72.83106070000001&submitAction=ENTER&restaurantId=${resId}
 // OR
 // https://foodfire.onrender.com/api/menu?page-type=REGULAR_MENU&complete-menu=true&lat=21.1702401&lng=72.83106070000001&submitAction=ENTER&restaurantId=
-
