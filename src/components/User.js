@@ -5,8 +5,17 @@ const User = ({ name, location }) => {
   const [count2] = useState(1);
 
   useEffect(() => {
-    // API call
-  }, [count, count2]);
+    // const timer = setInterval(() => {
+    //   console.log("hello")
+    // }, 1000);
+    // console.log("UseEffect");
+    // return ()=>{
+    //   clearInterval(timer);
+    //   console.log("useEffect returned");
+    // }
+  }, []);
+
+  console.log("render");
 
   return (
     <div className="user-card">

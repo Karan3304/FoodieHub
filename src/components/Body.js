@@ -2,6 +2,7 @@ import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
@@ -20,9 +21,6 @@ const Body = () => {
     const json = await response.json();
 
     console.log(json);
-
-    // const filtRES = json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle // this is optional chaining
-    // ?.restaurants || [];
     const filtRES =
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle // this is optional chaining
         ?.restaurants || [];
@@ -30,6 +28,14 @@ const Body = () => {
     setListOfRestaurants(filtRES);
     setFilteredRestaurants(filtRES);
   };
+
+  const OnlineStatus = useOnlineStatus();
+  if (OnlineStatus === false)
+    return (
+      <h1>
+        Looks like you are OFFline...!! please check you internet connection
+      </h1>
+    );
 
   return listOfRestaurants.length === 0 ? ( // if(listofRest.length===0){ then return shimmer}  this is known as  conditional rendering
     <Shimmer />
