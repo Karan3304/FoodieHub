@@ -14,9 +14,9 @@ const RestaurantCard = (props) => {
   } = info;
 
   return (
-    <div className="res-card" style={{ backgroundColor: "#f0f0f0" }}>
+    <div className="m-4 p-4 w-60 rounded-lg hover:bg-gray-200 bg-gray-100">
       <img
-        className="res-logo"
+        className="rounded-lg"
         src={
           "https://media-assets.swiggy.com/swiggy/image/upload/" +
           cloudinaryImageId
@@ -24,7 +24,7 @@ const RestaurantCard = (props) => {
         alt={name}
       />
 
-      <h3>{name}</h3>
+      <h3 className="font-bold py-4 text-xl">{name}</h3>
 
       <h4>{cuisines.join(", ")}</h4>
 
