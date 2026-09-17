@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { MENU_API_URL } from "../utils/constants";
 import MenuError from "./MenuError";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
+import RestaurantCategory from "./RestaurantCategory";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
@@ -29,27 +30,31 @@ const RestaurantMenu = () => {
     new Map(menuItems.map((item) => [item?.card?.info?.id, item])).values(),
   );
 
-  console.log(menuItems);
+  const categories =
+    resinfo.cards
+      ?.find((c) => c.card?.card?.cardGroupMap || c.groupedCard)
+      ?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter(
+        (item) =>
+          item.card?.card?.["@type"] ===
+          "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory",
+      ) ?? [];
+
+  console.log(categories);
 
   return (
-    <div className="menu">
-      <h1>{name}</h1>
-      <h2>{cuisines?.join(", ") || "No cuisines available"}</h2>
-      <h3>{costForTwoMessage}</h3>
-      <h2>Menu</h2>
-      <ul>
-        {uniqueMenuItems.map((item) => {
-          const info = item?.card?.info;
+    <div className="text-center">
+      <h1 className="font-bold my-6 text-2xl">{name}</h1>
+      <p className="font-bold text-lg">
+        {cuisines?.join(", ") || "No cuisines available"} - {costForTwoMessage}
+      </p>
+      {/* categories */}
 
-          const price = info?.price ?? info?.finalPrice ?? info?.defaultPrice;
-
-          return (
-            <li key={info.id}>
-              {info.name} - ₹{price ? price / 100 : "N/A"}
-            </li>
-          );
-        })}
-      </ul>
+      {categories.map((category) => (
+        <RestaurantCategory
+          data={category?.card?.card}
+          key={category?.card?.card?.categoryId}
+        />
+      ))}
     </div>
   );
 };
