@@ -9,6 +9,7 @@ import RestaurantCategory from "./RestaurantCategory";
 const RestaurantMenu = () => {
   const { resId } = useParams();
 
+  const [showIndex, setShowIndex] = useState(null);
   const { resinfo, error } = useRestaurantMenu(resId); // custom hook
   if (error) return <MenuError />;
 
@@ -49,10 +50,14 @@ const RestaurantMenu = () => {
       </p>
       {/* categories */}
 
-      {categories.map((category) => (
+      {categories.map((category, index) => (
         <RestaurantCategory
           data={category?.card?.card}
           key={category?.card?.card?.categoryId}
+          showItems={index === showIndex ? true : false}
+          setShowIndex={() => {
+            setShowIndex((prevIndex) => (prevIndex === index ? null : index));
+          }}
         />
       ))}
     </div>
