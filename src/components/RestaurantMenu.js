@@ -8,7 +8,7 @@ import RestaurantCategory from "./RestaurantCategory";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
-
+  const dummy = "Dummy data";
   const [showIndex, setShowIndex] = useState(null);
   const { resinfo, error } = useRestaurantMenu(resId); // custom hook
   if (error) return <MenuError />;
@@ -40,8 +40,6 @@ const RestaurantMenu = () => {
           "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory",
       ) ?? [];
 
-  console.log(categories);
-
   return (
     <div className="text-center">
       <h1 className="font-bold my-6 text-2xl">{name}</h1>
@@ -58,6 +56,7 @@ const RestaurantMenu = () => {
           setShowIndex={() => {
             setShowIndex((prevIndex) => (prevIndex === index ? null : index));
           }}
+          dummy={dummy}
         />
       ))}
     </div>

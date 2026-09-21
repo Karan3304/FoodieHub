@@ -1,8 +1,9 @@
 import RestaurantCard, { withVegLabel } from "./RestaurantCard";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
@@ -21,12 +22,10 @@ const Body = () => {
 
     const json = await response.json();
 
-    console.log(json);
     const filtRES =
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle // this is optional chaining
         ?.restaurants || [];
 
-    console.log(filtRES);
     setListOfRestaurants(filtRES);
     setFilteredRestaurants(filtRES);
   };
@@ -38,6 +37,8 @@ const Body = () => {
         Looks like you are OFFline...!! please check you internet connection
       </h1>
     );
+
+    const {setUserName,LoggedinUser} = useContext(UserContext);
 
   return listOfRestaurants.length === 0 ? ( // if(listofRest.length===0){ then return shimmer}  this is known as  conditional rendering
     <Shimmer />
@@ -81,6 +82,10 @@ const Body = () => {
           >
             Top rated Restaurants
           </button>
+        </div>
+        <div className="m-4 p-4 flex items-center">
+          <label>UserName : </label>
+          <input className="border border-black p-2" value={LoggedinUser} onChange={(e)=> setUserName(e.target.value)}/>
         </div>
       </div>
 

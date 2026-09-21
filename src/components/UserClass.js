@@ -3,7 +3,6 @@ import React from "react";
 class UserClass extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props);
     this.state = {
       userInfo: {
         name: "Dummy name",
@@ -19,7 +18,6 @@ class UserClass extends React.Component {
     // API call
     const data = await fetch("https://api.github.com/users/Karan3304");
     const json = await data.json();
-    console.log(json);
     this.setState({
       userInfo: json,
     });
@@ -30,12 +28,12 @@ class UserClass extends React.Component {
   }
 
   componentDidUpdate() {
-    console.log("Component updated");
+    // console.log("Component updated");
   }
 
   componentWillUnmount() {
     // clearInterval(this.timer);
-    console.log("component is unmounted");
+    // console.log("component is unmounted");
   }
   render() {
     // const { name, location } = this.props;

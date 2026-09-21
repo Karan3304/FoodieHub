@@ -1,7 +1,10 @@
+import { useContext } from "react";
+import UserContext from "../utils/UserContext";
 const RestaurantCard = (props) => {
   const { resData } = props;
 
   const { info } = resData;
+  const {LoggedinUser} = useContext(UserContext)
 
   const {
     cloudinaryImageId,
@@ -34,7 +37,7 @@ const RestaurantCard = (props) => {
 
       <h4>{costForTwo}</h4>
 
-      {/* <h4>{areaName}</h4> */}
+      <h4>User :  {LoggedinUser}</h4>
     </div>
   );
 };

@@ -4,18 +4,9 @@ const User = ({ name, location }) => {
   const [count] = useState(0);
   const [count2] = useState(1);
 
-  useEffect(() => {
-    // const timer = setInterval(() => {
-    //   console.log("hello")
-    // }, 1000);
-    // console.log("UseEffect");
-    // return ()=>{
-    //   clearInterval(timer);
-    //   console.log("useEffect returned");
-    // }
-  }, []);
+  useEffect(() => {}, []);
 
-  console.log("render");
+  // console.log("render");
 
   return (
     <div className="user-card">
