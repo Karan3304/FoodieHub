@@ -38,7 +38,7 @@ const Body = () => {
       </h1>
     );
 
-    const {setUserName,LoggedinUser} = useContext(UserContext);
+  const { setUserName, LoggedinUser } = useContext(UserContext);
 
   return listOfRestaurants.length === 0 ? ( // if(listofRest.length===0){ then return shimmer}  this is known as  conditional rendering
     <Shimmer />
@@ -85,7 +85,11 @@ const Body = () => {
         </div>
         <div className="m-4 p-4 flex items-center">
           <label>UserName : </label>
-          <input className="border border-black p-2" value={LoggedinUser} onChange={(e)=> setUserName(e.target.value)}/>
+          <input
+            className="border border-black p-2"
+            value={LoggedinUser}
+            onChange={(e) => setUserName(e.target.value)}
+          />
         </div>
       </div>
 

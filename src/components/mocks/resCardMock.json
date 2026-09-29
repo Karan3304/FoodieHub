@@ -1,0 +1,111 @@
+[{
+  "info": {
+    "id": "104342",
+    "name": "P. Hotel Bhagat Tarachand",
+    "cloudinaryImageId": "jsukui8wqcox8y3ojdp6",
+    "locality": "Ring Road",
+    "areaName": "Ring Road",
+    "costForTwo": "₹550 for two",
+    "cuisines": ["Chinese", "Biryani"],
+    "avgRating": 4.6,
+    "veg": true,
+    "parentId": "153347",
+    "avgRatingString": "4.6",
+    "totalRatingsString": "3.9K+",
+    "sla": {
+      "deliveryTime": 28,
+      "lastMileTravel": 4,
+      "serviceability": "SERVICEABLE",
+      "slaString": "25-30 mins",
+      "lastMileTravelString": "4.0 km",
+      "iconType": "ICON_TYPE_EMPTY"
+    },
+    "availability": {
+      "nextCloseTime": "2025-10-26 00:00:00",
+      "opened": true
+    },
+    "isOpen": true,
+    "type": "F",
+    "aggregatedDiscountInfoV3": {
+      "header": "₹50 OFF",
+      "subHeader": "ABOVE ₹499",
+      "discountTag": "FLAT DEAL"
+    },
+    "differentiatedUi": {
+      "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT"
+    },
+    "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+    "externalRatings": {
+      "aggregatedRating": {
+        "rating": "--"
+      }
+    },
+    "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+  },
+  "analytics": {
+    "context": "seo-data-43bca6b8-5039-46da-935e-cdde9f114a4e"
+  },
+  "cta": {
+    "link": "https://www.swiggy.com/city/surat/p-hotel-bhagat-tarachand-ring-road-rest104342",
+    "type": "WEBLINK"
+  }
+}
+
+, 
+
+{
+    "info": {
+        "id": "424877",
+        "name": "Dilliwale Pahelvanjee'S Cholle Bhature",
+        "cloudinaryImageId": "tajbfx84hahoum5w9niz",
+        "locality": "Moti Begumwadi",
+        "areaName": "New Textile Market",
+        "costForTwo": "₹300 for two",
+        "cuisines": [
+            "Punjabi",
+            "Street Food",
+            "Fast Food"
+        ],
+        "avgRating": 4.7,
+        "veg": true,
+        "parentId": "289667",
+        "avgRatingString": "4.7",
+        "totalRatingsString": "10K+",
+        "sla": {
+            "deliveryTime": 23,
+            "lastMileTravel": 3,
+            "serviceability": "SERVICEABLE",
+            "slaString": "20-25 mins",
+            "lastMileTravelString": "3.0 km",
+            "iconType": "ICON_TYPE_EMPTY"
+        },
+        "availability": {
+            "nextCloseTime": "2025-10-25 18:15:00",
+            "opened": true
+        },
+        "isOpen": true,
+        "type": "F",
+        "aggregatedDiscountInfoV3": {
+            "header": "₹50 OFF",
+            "subHeader": "ABOVE ₹499",
+            "discountTag": "FLAT DEAL"
+        },
+        "differentiatedUi": {
+            "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT"
+        },
+        "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+        "externalRatings": {
+            "aggregatedRating": {
+                "rating": "--"
+            }
+        },
+        "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+    },
+    "analytics": {
+        "context": "seo-data-43bca6b8-5039-46da-935e-cdde9f114a4e"
+    },
+    "cta": {
+        "link": "https://www.swiggy.com/city/surat/dilliwale-pahelvanjees-cholle-bhature-moti-begumwadi-new-textile-market-rest424877",
+        "type": "WEBLINK"
+    }
+}]
