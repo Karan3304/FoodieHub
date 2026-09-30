@@ -5,6 +5,7 @@ import { MENU_API_URL } from "../utils/constants";
 import MenuError from "./MenuError";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
+import MenuShimmer from "./MenuShimmer";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
@@ -13,7 +14,7 @@ const RestaurantMenu = () => {
   const { resinfo, error } = useRestaurantMenu(resId); // custom hook
   if (error) return <MenuError />;
 
-  if (resinfo === null) return <Shimmer />;
+  if (resinfo === null) return <MenuShimmer />;
 
   const { name, cuisines, costForTwoMessage } =
     resinfo?.cards?.[2]?.card?.card?.info || {};

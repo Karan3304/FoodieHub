@@ -39,7 +39,7 @@ const RestaurantCard = (props) => {
 
       <h4>{costForTwo}</h4>
 
-      <h4>User : {LoggedinUser}</h4>
+      {/* <h4>User : {LoggedinUser}</h4> */}
     </div>
   );
 };

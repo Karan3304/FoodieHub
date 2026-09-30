@@ -22,7 +22,7 @@ const AppLayout = () => {
   useEffect(() => {
     // make an api call ,send name and password
     const data = {
-      name: "Karan",
+      name: "",
     };
     setUserName(data.name);
   }, []);

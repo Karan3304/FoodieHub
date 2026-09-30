@@ -9,11 +9,11 @@ const Header = () => {
   const [btnName, setbtnName] = useState("Login");
   const OnlineStatus = useOnlineStatus();
   const { LoggedinUser } = useContext(UserContext);
-  console.log(LoggedinUser);
+  // console.log(LoggedinUser);
 
   // Subscribing to the store using a selector
   const cartItems = useSelector((store) => store.cart.items);
-  console.log(cartItems);
+  // console.log(cartItems);
 
   return (
     <div className="flex justify-between bg-pink-100 shadow-lg sm:bg-yellow-50 lg:bg-green-50">
