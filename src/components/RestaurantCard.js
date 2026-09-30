@@ -2,7 +2,7 @@ import { useContext } from "react";
 import UserContext from "../utils/UserContext";
 const RestaurantCard = (props) => {
   const { resData } = props;
-  console.log(resData);
+  // console.log(resData);
   const { info } = resData;
   const { LoggedinUser } = useContext(UserContext);
   const {
@@ -16,7 +16,10 @@ const RestaurantCard = (props) => {
   } = info;
 
   return (
-    <div className="m-4 p-4 w-60 rounded-lg hover:bg-gray-200 bg-gray-100">
+    <div
+      data-testid="resCard"
+      className="m-4 p-4 w-60 rounded-lg hover:bg-gray-200 bg-gray-100"
+    >
       <img
         className="rounded-lg"
         src={

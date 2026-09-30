@@ -3,13 +3,26 @@ import Contact from "../Contact";
 import "@testing-library/jest-dom";
 
 describe("Contact page test case", () => {
-  it("Should load contact component", () => {
+  // beforeAll(() => {
+  //   console.log("before all test cases");
+  // });
+  // beforeEach(() => {
+  //   console.log("before each test case");
+  // });
+  // afterAll(() => {
+  //   console.log("before all test cases");
+  // });
+  // afterEach(() => {
+  //   console.log("before each test case");
+  // });
+
+  test("Should load contact component", () => {
     render(<Contact />);
     const heading = screen.getByRole("heading");
     expect(heading).toBeInTheDocument();
   });
 
-  it("Should load submit button inside contact component", () => {
+  test("Should load submit button inside contact component", () => {
     render(<Contact />);
     const button = screen.getByRole("button");
     //   const button = screen.getByText("Submit");

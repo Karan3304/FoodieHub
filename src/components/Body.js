@@ -48,6 +48,7 @@ const Body = () => {
         <div className="m-4 p-4 ">
           <input
             type="text"
+            data-testid="searchInput"
             id="restaurant-search"
             name="restaurant-search"
             className="border border-solid border-black"
