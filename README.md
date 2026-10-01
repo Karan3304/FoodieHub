@@ -1,8 +1,4 @@
-<div align="center">
 
-# 🍽️ FoodieHub
-
-### A food ordering web app built with React: browse restaurants, explore menus, and fill your cart.
 <div align="center">
 
 # 🍽️ FoodieHub
