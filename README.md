@@ -4,6 +4,8 @@
 
 ### A food ordering web app built with React: browse restaurants, explore menus, and fill your cart.
 
+<p> <a href="https://foodiehub-k3304-x7p9.vercel.app/" target="_blank"> <img src="https://img.shields.io/badge/🚀%20Live%20Demo-Vercel-black?style=for-the-badge&logo=vercel" alt="Live Demo on Vercel" /> </a> <a href="https://karan3304.github.io/FoodieHub/" target="_blank"> <img src="https://img.shields.io/badge/🌐%20Live%20Demo-GitHub%20Pages-222?style=for-the-badge&logo=github" alt="Live Demo on GitHub Pages" /> </a> </p>
+
 <p>
   <img src="https://skillicons.dev/icons?i=react,redux,tailwind,js,html,css,jest,git,github&theme=light" alt="Tech stack icons" />
 </p>
