@@ -82,7 +82,7 @@ const appRouter = createBrowserRouter(
     },
   ],
   {
-    basename: "/FoodieHub",
+    basename: process.env.NODE_ENV === "production" ? "/FoodieHub" : "/",
   },
 );
 
