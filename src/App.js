@@ -29,57 +29,62 @@ const AppLayout = () => {
 
   return (
     <Provider store={appStore}>
-    <UserContext.Provider value={{ LoggedinUser: userName, setUserName }}>
-      <div className="app">
-        <Header />
-        <Outlet />
-      </div>
-    </UserContext.Provider>
+      <UserContext.Provider value={{ LoggedinUser: userName, setUserName }}>
+        <div className="app">
+          <Header />
+          <Outlet />
+        </div>
+      </UserContext.Provider>
     </Provider>
   );
 };
 
-const appRouter = createBrowserRouter([
+const appRouter = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <AppLayout />,
+      children: [
+        {
+          path: "/",
+          element: <Body />,
+        },
+        {
+          path: "/about",
+          element: (
+            <Suspense fallback={<h1>Loading...</h1>}>
+              <About />
+            </Suspense>
+          ),
+        },
+        {
+          path: "/contact",
+          element: <Contact />,
+        },
+        {
+          path: "/grocery",
+          element: (
+            <Suspense fallback={<h1>Loading...</h1>}>
+              <Grocery />
+            </Suspense>
+          ),
+        },
+        {
+          path: "/restaurants/:resId",
+          element: <RestaurantMenu />,
+        },
+        {
+          path: "/cart",
+          element: <Cart />,
+        },
+      ],
+      errorElement: <Error />,
+    },
+  ],
   {
-    path: "/",
-    element: <AppLayout />,
-    children: [
-      {
-        path: "/",
-        element: <Body />,
-      },
-      {
-        path: "/about",
-        element: (
-          <Suspense fallback={<h1>Loading...</h1>}>
-            <About />
-          </Suspense>
-        ),
-      },
-      {
-        path: "/contact",
-        element: <Contact />,
-      },
-      {
-        path: "/grocery",
-        element: (
-          <Suspense fallback={<h1>Loading...</h1>}>
-            <Grocery />
-          </Suspense>
-        ),
-      },
-      {
-        path: "/restaurants/:resId",
-        element: <RestaurantMenu />,
-      },
-      {
-        path:"/cart",
-        element:<Cart/>
-      }
-    ],
-    errorElement: <Error />,
+    basename: "/FoodieHub",
   },
-]);
+);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
