@@ -39,6 +39,10 @@ const AppLayout = () => {
   );
 };
 
+const basename = window.location.pathname.startsWith("/FoodieHub")
+  ? "/FoodieHub"
+  : "/";
+
 const appRouter = createBrowserRouter(
   [
     {
@@ -82,7 +86,7 @@ const appRouter = createBrowserRouter(
     },
   ],
   {
-    basename: process.env.NODE_ENV === "production" ? "/FoodieHub" : "/",
+    basename,
   },
 );
 
